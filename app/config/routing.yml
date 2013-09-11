@@ -1,4 +1,4 @@
-gbs_entity:
-    resource: "@GBSEntityBundle/Resources/config/routing.yml"
-    prefix:   /
+#gbs_entity:
+    #resource: "@GBSEntityBundle/Resources/config/routing.yml"
+    #prefix:   /
 
