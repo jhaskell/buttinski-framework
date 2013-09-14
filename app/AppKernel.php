@@ -17,6 +17,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
             new GBS\EntityBundle\GBSEntityBundle(),
+            new GBS\LocationBundle\GBSLocationBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

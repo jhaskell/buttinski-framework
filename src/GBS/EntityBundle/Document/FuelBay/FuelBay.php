@@ -8,7 +8,7 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
  * @MongoDB\EmbeddedDocument
  * @MongoDB\MappedSuperclass
  * @MongoDB\InheritanceType("SINGLE_COLLECTION")
- * @MongoDB\DiscriminatorField(fieldName="type")
+ * @MongoDB\DiscriminatorField(fieldName="fuel_bay_type")
  * @MongoDB\DiscriminatorMap({
  *     "tower_fuel"="GBS\EntityBundle\Document\FuelBay\TowerFuelBay",
  *     "tower_stront"="GBS\EntityBundle\Document\FuelBay\TowerStrontiumBay",

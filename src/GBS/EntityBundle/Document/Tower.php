@@ -11,6 +11,7 @@ use GBS\EntityBundle\Document\Inventory\TowerStrontiumBay;
  */
 class Tower
 {
+
     /**
      * @MongoDB\Id(strategy="auto")
      */
@@ -124,6 +125,15 @@ class Tower
      * )
      */
     protected $strontiumBay;
+
+    /**
+     * @MongoDB\ReferenceMany(
+     *     strategy="set",
+     *     cascade="all",
+     *     targetDocument="GBS\EntityBundle\Document\Module"
+     * )
+     */
+    protected $modules;
 
     /**
      * Get id
@@ -595,5 +605,39 @@ class Tower
     public function getStrontiumBay()
     {
         return $this->strontiumBay;
+    }
+    public function __construct()
+    {
+        $this->modules = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add module
+     *
+     * @param GBS\EntityBundle\Document\Module $module
+     */
+    public function addModule(\GBS\EntityBundle\Document\Module $module)
+    {
+        $this->modules[] = $module;
+    }
+
+    /**
+     * Remove module
+     *
+     * @param GBS\EntityBundle\Document\Module $module
+     */
+    public function removeModule(\GBS\EntityBundle\Document\Module $module)
+    {
+        $this->modules->removeElement($module);
+    }
+
+    /**
+     * Get modules
+     *
+     * @return Doctrine\Common\Collections\Collection $modules
+     */
+    public function getModules()
+    {
+        return $this->modules;
     }
 }
