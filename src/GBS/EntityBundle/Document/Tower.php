@@ -130,10 +130,20 @@ class Tower
      * @MongoDB\ReferenceMany(
      *     strategy="set",
      *     cascade="all",
+     *     simple="true",
      *     targetDocument="GBS\EntityBundle\Document\Module"
      * )
      */
     protected $modules;
+
+    /**
+     * @MongoDB\ReferenceOne(
+     *     targetDocument="GBS\EveAPIBundle\Document\ApiKey",
+     *     simple="true",
+     *     mappedBy="towers"
+     * )
+     */
+    protected $apiKey;
 
     /**
      * Get id

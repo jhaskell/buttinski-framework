@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
             new GBS\EntityBundle\GBSEntityBundle(),
             new GBS\LocationBundle\GBSLocationBundle(),
+            new GBS\EveAPIBundle\GBSEveAPIBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
