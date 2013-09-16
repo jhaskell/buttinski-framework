@@ -650,4 +650,26 @@ class Tower
     {
         return $this->modules;
     }
+
+    /**
+     * Set apiKey
+     *
+     * @param GBS\EveAPIBundle\Document\ApiKey $apiKey
+     * @return self
+     */
+    public function setApiKey(\GBS\EveAPIBundle\Document\ApiKey $apiKey)
+    {
+        $this->apiKey = $apiKey;
+        return $this;
+    }
+
+    /**
+     * Get apiKey
+     *
+     * @return GBS\EveAPIBundle\Document\ApiKey $apiKey
+     */
+    public function getApiKey()
+    {
+        return $this->apiKey;
+    }
 }
