@@ -16,6 +16,17 @@ class GenericInventory
      * )
      */
     protected $items = array();
+
+    /**
+     * @MongoDB\Float
+     */
+    protected $capacityUsed;
+
+    /**
+     * @MongoDB\Float
+     */
+    protected $capacityTotal;
+
     public function __construct()
     {
         $this->items = new \Doctrine\Common\Collections\ArrayCollection();
@@ -49,5 +60,49 @@ class GenericInventory
     public function getItems()
     {
         return $this->items;
+    }
+
+    /**
+     * Set capacityUsed
+     *
+     * @param float $capacityUsed
+     * @return self
+     */
+    public function setCapacityUsed($capacityUsed)
+    {
+        $this->capacityUsed = $capacityUsed;
+        return $this;
+    }
+
+    /**
+     * Get capacityUsed
+     *
+     * @return float $capacityUsed
+     */
+    public function getCapacityUsed()
+    {
+        return $this->capacityUsed;
+    }
+
+    /**
+     * Set capacityTotal
+     *
+     * @param float $capacityTotal
+     * @return self
+     */
+    public function setCapacityTotal($capacityTotal)
+    {
+        $this->capacityTotal = $capacityTotal;
+        return $this;
+    }
+
+    /**
+     * Get capacityTotal
+     *
+     * @return float $capacityTotal
+     */
+    public function getCapacityTotal()
+    {
+        return $this->capacityTotal;
     }
 }
