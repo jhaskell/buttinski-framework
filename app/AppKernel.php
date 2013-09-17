@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new GBS\EntityBundle\GBSEntityBundle(),
             new GBS\LocationBundle\GBSLocationBundle(),
             new GBS\EveAPIBundle\GBSEveAPIBundle(),
+            new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
