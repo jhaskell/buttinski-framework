@@ -3,8 +3,10 @@
 namespace GBS\EntityBundle\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+use Doctrine\Common\Collections\ArrayCollection;
 use GBS\EntityBundle\Document\Inventory\TowerFuelBay;
 use GBS\EntityBundle\Document\Inventory\TowerStrontiumBay;
+use GBS\EveAPIBundle\Document\ApiKey;
 
 /**
  * @MongoDB\Document
@@ -60,11 +62,6 @@ class Tower
     /**
      * @MongoDB\Int
      */
-    protected $apiKeyId;
-
-    /**
-     * @MongoDB\Int
-     */
     protected $usageFlags;
 
     /**
@@ -88,7 +85,7 @@ class Tower
     protected $combatStandingsOwnerId;
 
     /**
-     * @MongoDB\Int
+     * @MongoDB\Float
      */
     protected $combatStandingsThreshold;
 
@@ -121,7 +118,7 @@ class Tower
 
     /**
      * @MongoDB\EmbedOne(
-     *     targetDocument="GBS\EntityBundle\Document\FuelBay\TowerFuelBay"
+     *     targetDocument="GBS\EntityBundle\Document\FuelBay\TowerStrontiumBay"
      * )
      */
     protected $strontiumBay;
@@ -144,6 +141,15 @@ class Tower
      * )
      */
     protected $apiKey;
+
+    public function __construct()
+    {
+        $this->modules = new ArrayCollection();
+        $this->fuelBay = new TowerFuelBay();
+        $this->strontiumBay = new TowerStrontiumBay();
+        $this->apiKey = new ApiKey();
+    }
+    
 
     /**
      * Get id
@@ -329,28 +335,6 @@ class Tower
     public function getStandingOwnerId()
     {
         return $this->standingOwnerId;
-    }
-
-    /**
-     * Set apiKeyId
-     *
-     * @param int $apiKeyId
-     * @return self
-     */
-    public function setApiKeyId($apiKeyId)
-    {
-        $this->apiKeyId = $apiKeyId;
-        return $this;
-    }
-
-    /**
-     * Get apiKeyId
-     *
-     * @return int $apiKeyId
-     */
-    public function getApiKeyId()
-    {
-        return $this->apiKeyId;
     }
 
     /**
@@ -616,11 +600,7 @@ class Tower
     {
         return $this->strontiumBay;
     }
-    public function __construct()
-    {
-        $this->modules = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-    
+
     /**
      * Add module
      *
