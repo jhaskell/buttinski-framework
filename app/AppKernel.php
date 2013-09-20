@@ -16,7 +16,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Doctrine\Bundle\MongoDBBundle\DoctrineMongoDBBundle(),
-            new GBS\EntityBundle\GBSEntityBundle(),
+            new GBS\DocumentBundle\GBSDocumentBundle(),
             new GBS\LocationBundle\GBSLocationBundle(),
             new GBS\EveAPIBundle\GBSEveAPIBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),

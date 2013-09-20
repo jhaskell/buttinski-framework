@@ -16,7 +16,7 @@ class KeyAuthorization
 
     /**
      * @MongoDB\ReferenceOne(
-     *     targetDocument="GBS\EntityBundle\Document\User",
+     *     targetDocument="GBS\DocumentBundle\Document\User",
      *     simple="true"
      * )
      */
@@ -64,10 +64,10 @@ class KeyAuthorization
     /**
      * Set user
      *
-     * @param GBS\EntityBundle\Document\User $user
+     * @param GBS\DocumentBundle\Document\User $user
      * @return self
      */
-    public function setUser(\GBS\EntityBundle\Document\User $user)
+    public function setUser(\GBS\DocumentBundle\Document\User $user)
     {
         $this->user = $user;
         return $this;
@@ -76,7 +76,7 @@ class KeyAuthorization
     /**
      * Get user
      *
-     * @return GBS\EntityBundle\Document\User $user
+     * @return GBS\DocumentBundle\Document\User $user
      */
     public function getUser()
     {

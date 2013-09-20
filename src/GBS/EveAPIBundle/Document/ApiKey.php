@@ -41,7 +41,7 @@ class ApiKey
 
     /**
      * @MongoDB\ReferenceMany(
-     *     targetDocument="GBS\EntityBundle\Document\Tower",
+     *     targetDocument="GBS\DocumentBundle\Document\Tower",
      *     cascade="delete",
      *     simple="true",
      *     inversedBy="apiKey",
@@ -188,9 +188,9 @@ class ApiKey
     /**
      * Add tower
      *
-     * @param GBS\EntityBundle\Document\Tower $tower
+     * @param GBS\DocumentBundle\Document\Tower $tower
      */
-    public function addTower(\GBS\EntityBundle\Document\Tower $tower)
+    public function addTower(\GBS\DocumentBundle\Document\Tower $tower)
     {
         $this->towers[] = $tower;
     }
@@ -198,9 +198,9 @@ class ApiKey
     /**
      * Remove tower
      *
-     * @param GBS\EntityBundle\Document\Tower $tower
+     * @param GBS\DocumentBundle\Document\Tower $tower
      */
-    public function removeTower(\GBS\EntityBundle\Document\Tower $tower)
+    public function removeTower(\GBS\DocumentBundle\Document\Tower $tower)
     {
         $this->towers->removeElement($tower);
     }
