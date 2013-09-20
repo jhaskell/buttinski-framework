@@ -8,8 +8,13 @@ use GBS\EntityBundle\Document\Item;
 /**
  * @MongoDB\EmbeddedDocument
  */
-class FuelType extends Item
+class FuelType
 {
+    /**
+     * @MongoDB\Int
+     */
+    protected $typeId;
+
     /**
      * @MongoDB\Int
      */
@@ -40,58 +45,6 @@ class FuelType extends Item
     }
 
     /**
-     * Get hourlyBurnRate
-     *
-     * @return int $hourlyBurnRate
-     */
-    public function getHourlyBurnRate()
-    {
-        return $this->hourlyBurnRate;
-    }
-    /**
-     * @var int $itemId
-     */
-    protected $itemId;
-
-    /**
-     * @var int $typeId
-     */
-    protected $typeId;
-
-    /**
-     * @var string $typeName
-     */
-    protected $typeName;
-
-    /**
-     * @var int $quantity
-     */
-    protected $quantity;
-
-
-    /**
-     * Set itemId
-     *
-     * @param int $itemId
-     * @return self
-     */
-    public function setItemId($itemId)
-    {
-        $this->itemId = $itemId;
-        return $this;
-    }
-
-    /**
-     * Get itemId
-     *
-     * @return int $itemId
-     */
-    public function getItemId()
-    {
-        return $this->itemId;
-    }
-
-    /**
      * Set typeId
      *
      * @param int $typeId
@@ -114,46 +67,12 @@ class FuelType extends Item
     }
 
     /**
-     * Set typeName
+     * Get hourlyBurnRate
      *
-     * @param string $typeName
-     * @return self
+     * @return int $hourlyBurnRate
      */
-    public function setTypeName($typeName)
+    public function getHourlyBurnRate()
     {
-        $this->typeName = $typeName;
-        return $this;
-    }
-
-    /**
-     * Get typeName
-     *
-     * @return string $typeName
-     */
-    public function getTypeName()
-    {
-        return $this->typeName;
-    }
-
-    /**
-     * Set quantity
-     *
-     * @param int $quantity
-     * @return self
-     */
-    public function setQuantity($quantity)
-    {
-        $this->quantity = $quantity;
-        return $this;
-    }
-
-    /**
-     * Get quantity
-     *
-     * @return int $quantity
-     */
-    public function getQuantity()
-    {
-        return $this->quantity;
+        return $this->hourlyBurnRate;
     }
 }

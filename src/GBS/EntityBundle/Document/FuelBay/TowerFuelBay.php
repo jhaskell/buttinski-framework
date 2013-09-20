@@ -3,6 +3,8 @@
 namespace GBS\EntityBundle\Document\FuelBay;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+use Doctrine\Common\Collections\ArrayCollection;
+use GBS\EntityBundle\Document\Inventory\GenericInventory;
 
 /**
  * @MongoDB\EmbeddedDocument
@@ -21,7 +23,8 @@ class TowerFuelBay extends FuelBay
 
     public function __construct()
     {
-        $this->fuelTypes = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->fuelTypes = new ArrayCollection();
+        $this->inventory = new GenericInventory();
     }
     
     /**

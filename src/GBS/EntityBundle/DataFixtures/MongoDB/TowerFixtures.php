@@ -5,10 +5,12 @@ namespace GBS\EntityBundle\DataFixtures\MongoDB;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use GBS\EntityBundle\Document\Tower;
+use GBS\EntityBundle\Document\FuelBay\FuelType;
+use GBS\EntityBundle\Document\Item;
 
 class TowerFixtures
 {
-    $tower = new $tower();
+    $tower = new Tower();
     $fuelBay = new FuelBay();
 
     $tower->setItemId(123456789);
@@ -29,5 +31,36 @@ class TowerFixtures
     $tower->setCombatSecurityStatusThreshold(0.00);
     $tower->setCombatOnAggression(true);
     $tower->setCombatOnWar(true);
+
+    $fuelType = new FuelType()
+        ->setTypeId(4312)
+        ->setHourlyBurnRate(20);
+
+    $fuel = new Item()
+        ->setItemId(123456987)
+        ->setTypeId(4312)
+        ->setTypeName('Gallente Fuel Block')
+        ->setQuantity(5000);
+
+    $strontType = new FuelType()
+        ->setTypeId(16275)
+        ->setHourlyBurnRate(200);
+
+    $stront = new Item()
+        ->setItemId(312456789)
+        ->setTypeId(16275)
+        ->setTypeName('Strontium Clathrates')
+        ->setQuantity(10000);
+
+    $tower->getFuelBay()
+        ->addFuelType($fuelType)
+        ->getInventory()
+            ->addItem($fuel);
+
+    $tower->getStrontiumBay()
+        ->addFuelType($strontType)
+        ->getInventory()
+            ->addItem($stront);
+
 }
 
