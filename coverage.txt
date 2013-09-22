@@ -1,0 +1,14 @@
+
+
+Code Coverage Report 
+  2013-09-20 13:45:12
+
+ Summary: 
+  Classes: 8.33% (3/36)
+  Methods: 0.72% (2/277)
+  Lines:   0.92% (11/1200)
+
+\GBS\DocumentBundle\Document\FuelBay::FuelBay
+  Methods:  14.29% ( 1/ 7)   Lines:  44.44% (  8/ 18)
+\GBS\DocumentBundle\Document\FuelBay::FuelType
+  Methods:   9.09% ( 1/11)   Lines:  16.67% (  3/ 18)

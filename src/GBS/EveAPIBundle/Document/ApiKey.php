@@ -6,6 +6,13 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 
 /**
  * @MongoDB\Document
+ * @MongoDB\MappedSuperclass
+ * @MongoDB\DiscriminatorField(fieldName="type")
+ * @MongoDB\DiscriminatorMap({
+ *     "Account"     = "GBS\EveAPIBundle\Document\Key\AccountKey",
+ *     "Character"   = "GBS\EveAPIBundle\Document\Key\CharacterKey",
+ *     "Corporation" = "GBS\EveAPIBundle\Document\Key\CorporationKey"
+ * })
  */
 class ApiKey
 {
@@ -30,16 +37,11 @@ class ApiKey
     protected $accessMask;
     
     /**
-     * @MongoDB\String
-     */
-    protected $type;
-
-    /**
      * @MongoDB\Date
      */
     protected $expiration;
 
-    /**
+    /*
      * @MongoDB\ReferenceMany(
      *     targetDocument="GBS\DocumentBundle\Document\Tower",
      *     cascade="delete",
@@ -48,7 +50,7 @@ class ApiKey
      *     strategy="set"
      * )
      */
-    protected $towers;
+    //protected $towers;
 
     /**
      * @MongoDB\ReferenceMany(
@@ -59,9 +61,10 @@ class ApiKey
      * )
      */
     protected $keyAuthorizations;
+
     public function __construct()
     {
-        $this->towers = new \Doctrine\Common\Collections\ArrayCollection();
+        //$this->towers = new \Doctrine\Common\Collections\ArrayCollection();
         $this->keyAuthorizations = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
@@ -142,28 +145,6 @@ class ApiKey
     }
 
     /**
-     * Set type
-     *
-     * @param string $type
-     * @return self
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-        return $this;
-    }
-
-    /**
-     * Get type
-     *
-     * @return string $type
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
      * Set expiration
      *
      * @param date $expiration
@@ -183,36 +164,6 @@ class ApiKey
     public function getExpiration()
     {
         return $this->expiration;
-    }
-
-    /**
-     * Add tower
-     *
-     * @param GBS\DocumentBundle\Document\Tower $tower
-     */
-    public function addTower(\GBS\DocumentBundle\Document\Tower $tower)
-    {
-        $this->towers[] = $tower;
-    }
-
-    /**
-     * Remove tower
-     *
-     * @param GBS\DocumentBundle\Document\Tower $tower
-     */
-    public function removeTower(\GBS\DocumentBundle\Document\Tower $tower)
-    {
-        $this->towers->removeElement($tower);
-    }
-
-    /**
-     * Get towers
-     *
-     * @return Doctrine\Common\Collections\Collection $towers
-     */
-    public function getTowers()
-    {
-        return $this->towers;
     }
 
     /**

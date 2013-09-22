@@ -7,6 +7,9 @@ use Phake;
 
 class FuelTypeTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @covers GBS\DocumentBundle\Document\FuelBay\FuelType::getHoursRemaining
+     */
     public function testGetHoursRemainingMath()
     {
         $fuel = new FuelType();
@@ -15,6 +18,9 @@ class FuelTypeTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(10, $fuel->getHoursRemaining());
     }
 
+    /**
+     * @covers GBS\DocumentBundle\Document\FuelBay\FuelType::getHoursRemaining
+     */
     public function testGetHoursRemainingNoDivisionByZero()
     {
         $fuel = new FuelType();

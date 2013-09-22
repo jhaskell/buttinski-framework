@@ -23,7 +23,7 @@ class FuelBayTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers FuelBay::getHoursRemaining
+     * @covers GBS\DocumentBundle\Document\FuelBay\FuelBay::getHoursRemaining
      * @dataProvider getHoursRemainingProvider
      */
     public function testGetHoursRemaining($hours1, $hours2, $hours3, $expectedHoursRemaining)
@@ -50,7 +50,7 @@ class FuelBayTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers FuelBay::getHoursRemaining
+     * @covers GBS\DocumentBundle\Document\FuelBay\FuelBay::getHoursRemaining
      */
     public function testGetHoursRemainingWithNoFuelTypesDefined()
     {
