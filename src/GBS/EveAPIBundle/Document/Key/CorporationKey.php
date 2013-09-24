@@ -22,10 +22,12 @@ class CorporationKey extends ApiKey
     /**
      * @MongoDB\ReferenceMany(
      *     strategy="set",
+     *     simple="true",
      *     targetDocument="GBS\DocumentBundle\Document\Tower"
      * )
      */
     protected $towers = array();
+
     /**
      * @var $id
      */

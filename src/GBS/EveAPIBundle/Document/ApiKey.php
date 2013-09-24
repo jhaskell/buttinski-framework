@@ -41,17 +41,6 @@ class ApiKey
      */
     protected $expiration;
 
-    /*
-     * @MongoDB\ReferenceMany(
-     *     targetDocument="GBS\DocumentBundle\Document\Tower",
-     *     cascade="delete",
-     *     simple="true",
-     *     inversedBy="apiKey",
-     *     strategy="set"
-     * )
-     */
-    //protected $towers;
-
     /**
      * @MongoDB\ReferenceMany(
      *     targetDocument="GBS\EveAPIBundle\Document\KeyAuthorization",
@@ -64,7 +53,6 @@ class ApiKey
 
     public function __construct()
     {
-        //$this->towers = new \Doctrine\Common\Collections\ArrayCollection();
         $this->keyAuthorizations = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
