@@ -13,7 +13,7 @@ class CorporationKey extends ApiKey
     /**
      * @MongoDB\EmbedOne(
      *     strategy="set",
-     *     targetDocument="GBS\EveAPIBundle\Document\Corporation"
+     *     targetDocument="GBS\DocumentBundle\Document\Corporation"
      * )
      *
      */

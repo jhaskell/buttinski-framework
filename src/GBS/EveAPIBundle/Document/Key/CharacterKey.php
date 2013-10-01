@@ -14,11 +14,12 @@ class CharacterKey extends ApiKey
      *
      * @MongoDB\EmbedOne(
      *     strategy="set",
-     *     targetDocument="GBS\EveAPIBundle\Document\Character"
+     *     targetDocument="GBS\DocumentBundle\Document\Character"
      * )
      *
      */
     protected $character = array();
+
     /**
      * @var $id
      */

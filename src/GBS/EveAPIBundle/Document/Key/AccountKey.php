@@ -13,7 +13,7 @@ class AccountKey extends ApiKey
     /**
      * @MongoDB\EmbedMany(
      *     strategy="set",
-     *     targetDocument="GBS\EveAPIBundle\Document\Character"
+     *     targetDocument="GBS\DocumentBundle\Document\Character"
      * )
      *
      */

@@ -1,6 +1,6 @@
 <?php
 
-namespace GBS\EveAPIBundle\Document;
+namespace GBS\DocumentBundle\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 
