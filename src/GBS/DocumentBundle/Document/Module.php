@@ -46,12 +46,6 @@ class Module
     protected $typeId;
 
     /**
-     * @MongoDB\Int
-     */
-    protected $locationId;
-
-
-    /**
      * Get id
      *
      * @return id $id
@@ -103,27 +97,5 @@ class Module
     public function getTypeId()
     {
         return $this->typeId;
-    }
-
-    /**
-     * Set locationId
-     *
-     * @param int $locationId
-     * @return self
-     */
-    public function setLocationId($locationId)
-    {
-        $this->locationId = $locationId;
-        return $this;
-    }
-
-    /**
-     * Get locationId
-     *
-     * @return int $locationId
-     */
-    public function getLocationId()
-    {
-        return $this->locationId;
     }
 }

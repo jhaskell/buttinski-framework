@@ -67,10 +67,10 @@ class CorporationKey extends ApiKey
     /**
      * Set corporation
      *
-     * @param GBS\EveAPIBundle\Document\Corporation $corporation
+     * @param GBS\DocumentBundle\Document\Corporation $corporation
      * @return self
      */
-    public function setCorporation(\GBS\EveAPIBundle\Document\Corporation $corporation)
+    public function setCorporation(\GBS\DocumentBundle\Document\Corporation $corporation)
     {
         $this->corporation = $corporation;
         return $this;
@@ -79,7 +79,7 @@ class CorporationKey extends ApiKey
     /**
      * Get corporation
      *
-     * @return GBS\EveAPIBundle\Document\Corporation $corporation
+     * @return GBS\DocumentBundle\Document\Corporation $corporation
      */
     public function getCorporation()
     {

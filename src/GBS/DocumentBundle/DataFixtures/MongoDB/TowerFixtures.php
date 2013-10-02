@@ -2,12 +2,13 @@
 
 namespace GBS\DocumentBundle\DataFixtures\MongoDB;
 
-use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use GBS\DocumentBundle\Document\Tower;
 use GBS\DocumentBundle\Document\FuelBay\FuelType;
 
-class TowerFixtures implements FixtureInterface
+class TowerFixtures extends AbstractFixture implements OrderedFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
@@ -51,6 +52,13 @@ class TowerFixtures implements FixtureInterface
 
         $manager->persist($tower);
         $manager->flush();
+
+        $this->addReference('tower.reaction_simple', $tower);
+    }
+
+    public function getOrder()
+    {
+        return 10;
     }
 }
 

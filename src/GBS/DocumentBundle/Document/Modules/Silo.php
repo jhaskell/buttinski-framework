@@ -33,12 +33,6 @@ class Silo extends Module
     protected $typeId;
 
     /**
-     * @var int $locationId
-     */
-    protected $locationId;
-
-
-    /**
      * Set contents
      *
      * @param GBS\DocumentBundle\Document\Item $contents
@@ -112,27 +106,5 @@ class Silo extends Module
     public function getTypeId()
     {
         return $this->typeId;
-    }
-
-    /**
-     * Set locationId
-     *
-     * @param int $locationId
-     * @return self
-     */
-    public function setLocationId($locationId)
-    {
-        $this->locationId = $locationId;
-        return $this;
-    }
-
-    /**
-     * Get locationId
-     *
-     * @return int $locationId
-     */
-    public function getLocationId()
-    {
-        return $this->locationId;
     }
 }

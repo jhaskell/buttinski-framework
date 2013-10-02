@@ -58,10 +58,10 @@ class CharacterKey extends ApiKey
     /**
      * Set character
      *
-     * @param GBS\EveAPIBundle\Document\Character $character
+     * @param GBS\DocumentBundle\Document\Character $character
      * @return self
      */
-    public function setCharacter(\GBS\EveAPIBundle\Document\Character $character)
+    public function setCharacter(\GBS\DocumentBundle\Document\Character $character)
     {
         $this->character = $character;
         return $this;
@@ -70,7 +70,7 @@ class CharacterKey extends ApiKey
     /**
      * Get character
      *
-     * @return GBS\EveAPIBundle\Document\Character $character
+     * @return GBS\DocumentBundle\Document\Character $character
      */
     public function getCharacter()
     {

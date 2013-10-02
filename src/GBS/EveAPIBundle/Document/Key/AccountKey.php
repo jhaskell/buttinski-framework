@@ -57,9 +57,9 @@ class AccountKey extends ApiKey
     /**
      * Add character
      *
-     * @param GBS\EveAPIBundle\Document\Character $character
+     * @param GBS\DocumentBundle\Document\Character $character
      */
-    public function addCharacter(\GBS\EveAPIBundle\Document\Character $character)
+    public function addCharacter(\GBS\DocumentBundle\Document\Character $character)
     {
         $this->characters[] = $character;
     }
@@ -67,9 +67,9 @@ class AccountKey extends ApiKey
     /**
      * Remove character
      *
-     * @param GBS\EveAPIBundle\Document\Character $character
+     * @param GBS\DocumentBundle\Document\Character $character
      */
-    public function removeCharacter(\GBS\EveAPIBundle\Document\Character $character)
+    public function removeCharacter(\GBS\DocumentBundle\Document\Character $character)
     {
         $this->characters->removeElement($character);
     }

@@ -7,8 +7,8 @@ use Doctrine\Common\Persistence\ObjectManager;
 use GBS\EveAPIBundle\Document\Key\CorporationKey;
 use GBS\EveAPIBundle\Document\Key\CharacterKey;
 use GBS\EveAPIBundle\Document\Key\AccountKey;
-use GBS\EveAPIBundle\Document\Corporation;
-use GBS\EveAPIBundle\Document\Character;
+use GBS\DocumentBundle\Document\Corporation;
+use GBS\DocumentBundle\Document\Character;
 
 class ApiKeysFixtures implements FixtureInterface
 {
