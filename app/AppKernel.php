@@ -20,6 +20,8 @@ class AppKernel extends Kernel
             new GBS\LocationBundle\GBSLocationBundle(),
             new GBS\EveAPIBundle\GBSEveAPIBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+            new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

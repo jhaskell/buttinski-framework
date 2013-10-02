@@ -18,7 +18,12 @@ class TowerFuelBay extends FuelBay
 
     /**
      * @var GBS\DocumentBundle\Document\FuelBay\FuelType
+     * @MongoDB\EmbedMany(
+     *     targetDocument="GBS\DocumentBundle\Document\FuelBay\FuelType",
+     *     strategy="set"
+     * )
      */
+    
     protected $fuelTypes = array();
 
     public function __construct()

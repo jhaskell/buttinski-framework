@@ -14,7 +14,7 @@ class ApiKeysFixtures implements FixtureInterface
 {
     public function load(ObjectManager $manager)
     {
-        $corpKey = new CorpKey();
+        $corpKey = new CorporationKey();
         $charKey = new CharacterKey();
         $accountKey = new AccountKey();
 

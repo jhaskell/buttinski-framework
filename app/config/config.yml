@@ -50,3 +50,7 @@ doctrine_mongodb:
         default:
             auto_mapping:   true
 
+fos_user:
+    db_driver: mongodb
+    firewall_name: main
+    user_class: GBS\DocumentBundle\Document\User

@@ -16,13 +16,15 @@ class ModulesFixtures extends AbstractFixture implements OrderedFixtureInterface
      */
     public function load(ObjectManager $manager)
     {
-        $this->loadSimpleReactionTower();
+        $this->loadSimpleReactionTower($manager);
     }
 
     /**
      * Loads modules for the simple reaction tower.
+     *
+     * @param ObjectManager $manager The fixture's object manager.
      */
-    protected function loadSimpleReactionTower()
+    protected function loadSimpleReactionTower(ObjectManager $manager)
     {
         $inputSilo1 = new Silo();
         $inputSilo2 = new Silo();
@@ -73,9 +75,8 @@ class ModulesFixtures extends AbstractFixture implements OrderedFixtureInterface
         $manager->persist($outputSilo);
         $manager->persist($reactor);
 
-        $tower = $this->getReference('tower.reaction_simple');
-        $tower
-            ->addModule($inputSilo1)
+        $tower = $this->getReference('tower-reaction_simple');
+        $tower->addModule($inputSilo1)
             ->addModule($inputSilo2)
             ->addModule($outputSilo)
             ->addModule($reactor);

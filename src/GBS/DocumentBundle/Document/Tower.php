@@ -4,8 +4,8 @@ namespace GBS\DocumentBundle\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 use Doctrine\Common\Collections\ArrayCollection;
-use GBS\DocumentBundle\Document\Inventory\TowerFuelBay;
-use GBS\DocumentBundle\Document\Inventory\TowerStrontiumBay;
+use GBS\DocumentBundle\Document\FuelBay\TowerFuelBay;
+use GBS\DocumentBundle\Document\FuelBay\TowerStrontiumBay;
 use GBS\EveAPIBundle\Document\ApiKey;
 
 /**
@@ -133,21 +133,11 @@ class Tower
      */
     protected $modules;
 
-    /**
-     * @MongoDB\ReferenceOne(
-     *     targetDocument="GBS\EveAPIBundle\Document\ApiKey",
-     *     simple="true",
-     *     mappedBy="towers"
-     * )
-     */
-    protected $apiKey;
-
     public function __construct()
     {
         $this->modules = new ArrayCollection();
         $this->fuelBay = new TowerFuelBay();
         $this->strontiumBay = new TowerStrontiumBay();
-        $this->apiKey = new ApiKey();
     }
     
 
@@ -582,10 +572,10 @@ class Tower
     /**
      * Set strontiumBay
      *
-     * @param GBS\DocumentBundle\Document\FuelBay\TowerFuelBay $strontiumBay
+     * @param GBS\DocumentBundle\Document\FuelBay\TowerStrontiumBay $strontiumBay
      * @return self
      */
-    public function setStrontiumBay(\GBS\DocumentBundle\Document\FuelBay\TowerFuelBay $strontiumBay)
+    public function setStrontiumBay(\GBS\DocumentBundle\Document\FuelBay\TowerStrontiumBay $strontiumBay)
     {
         $this->strontiumBay = $strontiumBay;
         return $this;
@@ -609,6 +599,8 @@ class Tower
     public function addModule(\GBS\DocumentBundle\Document\Module $module)
     {
         $this->modules[] = $module;
+
+        return $this;
     }
 
     /**
@@ -619,6 +611,8 @@ class Tower
     public function removeModule(\GBS\DocumentBundle\Document\Module $module)
     {
         $this->modules->removeElement($module);
+
+        return $this;
     }
 
     /**
@@ -629,27 +623,5 @@ class Tower
     public function getModules()
     {
         return $this->modules;
-    }
-
-    /**
-     * Set apiKey
-     *
-     * @param GBS\EveAPIBundle\Document\ApiKey $apiKey
-     * @return self
-     */
-    public function setApiKey(\GBS\EveAPIBundle\Document\ApiKey $apiKey)
-    {
-        $this->apiKey = $apiKey;
-        return $this;
-    }
-
-    /**
-     * Get apiKey
-     *
-     * @return GBS\EveAPIBundle\Document\ApiKey $apiKey
-     */
-    public function getApiKey()
-    {
-        return $this->apiKey;
     }
 }
