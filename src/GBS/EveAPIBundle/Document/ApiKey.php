@@ -7,7 +7,8 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 /**
  * @MongoDB\Document
  * @MongoDB\MappedSuperclass
- * @MongoDB\DiscriminatorField(fieldName="type")
+ * @MongoDB\InheritanceType("SINGLE_COLLECTION")
+ * @MongoDB\DiscriminatorField(fieldName="key_type")
  * @MongoDB\DiscriminatorMap({
  *     "Account"     = "GBS\EveAPIBundle\Document\Key\AccountKey",
  *     "Character"   = "GBS\EveAPIBundle\Document\Key\CharacterKey",
