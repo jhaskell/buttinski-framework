@@ -5,7 +5,7 @@ namespace GBS\EveAPIBundle\Document;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 
 /**
- * @MongoDB\Document(repositoryClass="GBS\EveAPIBundle\Model\KeyAuthorizationRepository")
+ * @MongoDB\Document(repositoryClass="GBS\EveAPIBundle\Document\KeyAuthorizationRepository")
  */
 class KeyAuthorization
 {
